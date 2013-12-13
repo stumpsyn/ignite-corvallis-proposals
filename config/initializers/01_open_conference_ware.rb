@@ -1,5 +1,7 @@
 # Edit this file to configure OpenConferenceWare's settings
 
+OpenConferenceWare::Event.primary_key = :id
+
 OpenConferenceWare.configure do |config|
   # The path where the OpenConferenceWare engine is mounted in your Rails app
   # This default should work in most situations, but may need to be overridden
