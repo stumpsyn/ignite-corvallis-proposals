@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+label {
+  display: inline;
+  font-weight: bold;
+}
+
+.proposal-meta {
+  border: none;
+}

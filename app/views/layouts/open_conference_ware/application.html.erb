@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title><%= OpenConferenceWare.organization %>: <%= page_title %></title>
+  <title><%= page_title %> / <%= OpenConferenceWare.organization %>: <%= OpenConferenceWare.tagline %></title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
+  <meta name="description" content="<%= OpenConferenceWare.tagline %>">
+
+  <%= csrf_meta_tag %>
+  <%= yield :meta %>
+
+  <!-- Feeds -->
+  <%= auto_discovery_link_tag(:atom, proposals_path(:format => :atom), :title => "#{OpenConferenceWare.organization}: Proposals feed") %>
+  <% if admin? %>
+    <%= auto_discovery_link_tag(:atom, comments_path(:format => :atom, :secret => OpenConferenceWare::CommentsController::SECRET), :title => "#{OpenConferenceWare.organization}: Proposals comments feed") %>
+  <% end %>
 
   <%= stylesheet_link_tag "open_conference_ware/application" %>
   <link rel='stylesheet' id='admin-bar-css'  href='http://igniteportland.org/wp-includes/css/admin-bar.min.css?ver=3.6' type='text/css' media='all' />
@@ -14,19 +24,27 @@
   <link rel='stylesheet' id='bootstrap-css'  href='http://igniteportland.org/wp-content/themes/hiero/css/bootstrap.min.css?ver=3.6' type='text/css' media='all' />
   <link rel='stylesheet' id='athemes-style-css'  href='http://igniteportland.org/wp-content/themes/hiero/style.css?ver=3.6' type='text/css' media='all' />
   <link rel="stylesheet" id="custom-css-css" type="text/css" href="http://igniteportland.org/?custom-css=1&#038;csblog=5&#038;cscache=6&#038;csrev=9" />
-  <style>
-    label { 
-      display: inline; 
-      font-weight: bold;
-    }
-  </style>
+  <%= stylesheet_link_tag "application" %>
+  <%= yield :stylesheets %>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag 'open_conference_ware/ie' %>
+  <![endif]-->
+
 
   <%= javascript_include_tag 'open_conference_ware/application' %>
+  <%= yield :scripts -%>
 
-  <%= auto_discovery_link_tag(:atom, proposals_path(:format => :atom), :title => "#{OpenConferenceWare.organization}: Proposals feed") %>
-  <% if admin? %>
-    <%= auto_discovery_link_tag(:atom, comments_path(:format => :atom, :secret => OpenConferenceWare::CommentsController::SECRET), :title => "#{OpenConferenceWare.organization}: Proposals comments feed") %>
-  <% end %>
+  <% expose_to_js( :current_user, logged_in? ? current_user.id : false ) -%>
+  <% expose_to_js( :authenticity_token, form_authenticity_token ) if protect_against_forgery? -%>
+
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+<%=       indent_block( yield(:javascript_expose_values), 3) -%>
+<%=       indent_block( yield(:javascript_on_ready), 3) -%>
+    });
+  </script>
 </head>
 
 <body class="proposals">
@@ -170,10 +188,5 @@
     //]]>
     </script>
   <% end %>
-
-  <!-- arbitrary javascript from views -->
-  <script type="text/javascript">
-    <%= yield :javascript %>
-  </script>
 </body>
 </html>
