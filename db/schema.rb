@@ -35,19 +35,20 @@ ActiveRecord::Schema.define(version: 20131204000355) do
 
   add_index "open_conference_ware_comments", ["proposal_id"], name: "index_open_conference_ware_comments_on_proposal_id"
 
-  create_table "open_conference_ware_events", force: true do |t|
+  create_table "open_conference_ware_events", id: false, force: true do |t|
+    t.integer  "id",                                                      null: false
     t.string   "title"
     t.datetime "deadline"
     t.text     "open_text"
     t.text     "closed_text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "accept_proposal_comments_after_deadline", default: false
     t.boolean  "proposal_status_published",               default: false, null: false
     t.text     "session_text"
     t.text     "tracks_text"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.boolean  "accept_proposal_comments_after_deadline", default: false
     t.string   "slug"
     t.boolean  "schedule_published",                      default: false
     t.integer  "parent_id"
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20131204000355) do
     t.boolean  "show_proposal_confirmation_controls",     default: false
   end
 
+  add_index "open_conference_ware_events", ["id"], name: "index_open_conference_ware_events_on_id", unique: true
   add_index "open_conference_ware_events", ["slug"], name: "index_open_conference_ware_events_on_slug"
 
   create_table "open_conference_ware_proposals", force: true do |t|
