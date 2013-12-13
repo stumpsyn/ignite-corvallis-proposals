@@ -26,43 +26,46 @@ OpenConferenceWare.configure do |config|
   # Many features of OpenConferenceWare can be toggled via these settings
 
   # Can people create proposals without logging in?
-  config.have_anonymous_proposals = false
+  config.have_anonymous_proposals = true
 
   # Do proposals have excerpts?
-  config.have_proposal_excerpts = true
+  config.have_proposal_excerpts = false
 
   # Do events have tracks?
-  config.have_event_tracks = true
+  config.have_event_tracks = false
 
   # Do events have session types?
-  config.have_event_session_types = true
+  config.have_event_session_types = false
 
   # Display events picker so user can pick between multiple events?
   config.have_events_picker = false
 
   # Are proposals associated with multiple presenters?
-  config.have_multiple_presenters = true
+  config.have_multiple_presenters = false
 
   # Can people upload pictures of themselves?
   config.have_user_pictures = true
 
   # Is profile information, like biography, stored in the User record? Else stored in Proposal.
-  config.have_user_profiles = true
+  config.have_user_profiles = false
 
   # Do events have rooms?
-  config.have_event_rooms = true
+  config.have_event_rooms = false
 
   # Should a proposal ask for the submitter's speaking experience?
-  config.have_proposal_speaking_experience = true
+  config.have_proposal_speaking_experience = false
 
   # Can proposals have start times?
-  config.have_proposal_start_times = true
+  config.have_proposal_start_times = false
 
   # Can proposals have statuses?
-  config.have_proposal_statuses = true
+  config.have_proposal_statuses = false
 
   # Can users add comments until a toggle is flipped on the event?
   config.have_event_proposal_comments_after_deadline = true
+
+  # Can users note their favorite sessions?
+  config.have_user_favorites = false
 
   # What audience experience levels can a proposal be classified as?
   # The list will be displayed on the form in the order defined below.
@@ -70,11 +73,7 @@ OpenConferenceWare.configure do |config|
   # the "label" is the human-readable value displayed.
   #
   # Set this to a blank array to disable audience levels
-  config.proposal_audience_levels ||= [
-    {slug: 'a', label: 'Beginner'},
-    {slug: 'b', label: 'Intermediate'},
-    {slug: 'c', label: 'Advanced'}
-  ]
+  config.proposal_audience_levels = []
 
   # What message is displayed as a hint to explain the audience level?
   config.proposal_audience_level_hint = "(Tell us the intended audience experience level for this talk)"
