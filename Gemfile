@@ -7,7 +7,7 @@ gem 'rails', '4.0.2'
 gem 'puma'
 
 # Use OpenConferenceWare
-gem 'open_conference_ware', '~> 1.0.0.pre', git: 'https://github.com/osbridge/openconferenceware.git'
+gem 'open_conference_ware', '~> 1.0.0.pre', git: 'https://github.com/osbridge/openconferenceware.git', branch: 'without_cache_lookups_mixin'
 
 # Allow OpenID and Persona authentication
 gem 'omniauth-openid'
