@@ -38,3 +38,8 @@ label {
 .proposal-meta {
   border: none;
 }
+
+td, th {
+  vertical-align: top;
+  line-height: 1.6em;
+}
