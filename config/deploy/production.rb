@@ -1,3 +1,3 @@
 set :stage, :production
-server 'lucca.stumptownsyndicate.org', user: 'ignite-portland-proposals', roles: %w{web app db}
+server 'lucca.stumptownsyndicate.org', user: 'ignite-corvallis-proposals', roles: %w{web app db}
 

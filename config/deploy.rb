@@ -1,10 +1,10 @@
-set :application, 'ignite-portland-proposals'
-set :repo_url, 'git@github.com:stumpsyn/ignite-portland-proposals.git'
+set :application, 'ignite-corvallis-proposals'
+set :repo_url, 'git@github.com:stumpsyn/ignite-corvallis-proposals.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 set :branch, :master
 
-set :deploy_to, '/var/www/ignite-portland-proposals'
+set :deploy_to, '/var/www/ignite-corvallis-proposals'
 # set :scm, :git
 
 # set :format, :pretty
