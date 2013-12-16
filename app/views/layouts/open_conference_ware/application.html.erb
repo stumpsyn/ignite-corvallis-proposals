@@ -17,14 +17,6 @@
     <%= auto_discovery_link_tag(:atom, comments_path(:format => :atom, :secret => OpenConferenceWare::CommentsController::SECRET), :title => "#{OpenConferenceWare.organization}: Proposals comments feed") %>
   <% end %>
 
-  <%= stylesheet_link_tag "open_conference_ware/application" %>
-  <link rel='stylesheet' id='admin-bar-css'  href='http://igniteportland.org/wp-includes/css/admin-bar.min.css?ver=3.6' type='text/css' media='all' />
-  <link rel='stylesheet' id='jetpack-widgets-css'  href='http://igniteportland.org/wp-content/plugins/jetpack/modules/widgets/widgets.css?ver=20121003' type='text/css' media='all' />
-  <link rel='stylesheet' id='athemes-fonts-css'  href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&#038;ver=3.6' type='text/css' media='all' />
-  <link rel='stylesheet' id='athemes-glyphs-css'  href='http://igniteportland.org/wp-content/themes/hiero/css/athemes-glyphs.css?ver=3.6' type='text/css' media='all' />
-  <link rel='stylesheet' id='bootstrap-css'  href='http://igniteportland.org/wp-content/themes/hiero/css/bootstrap.min.css?ver=3.6' type='text/css' media='all' />
-  <link rel='stylesheet' id='athemes-style-css'  href='http://igniteportland.org/wp-content/themes/hiero/style.css?ver=3.6' type='text/css' media='all' />
-  <link rel="stylesheet" id="custom-css-css" type="text/css" href="http://igniteportland.org/?custom-css=1&#038;csblog=5&#038;cscache=6&#038;csrev=9" />
   <%= stylesheet_link_tag "application" %>
   <%= yield :stylesheets %>
 
@@ -48,147 +40,140 @@
     });
   </script>
 </head>
+<body>
 
-<body class="proposals">
-
-  <header id="masthead" class="site-header" role="banner">
-    <div class="clearfix container">
-      <div class="site-branding">
-              <h1 class="site-title">
-          <a href="http://igniteportland.org/" title="Ignite Portland" rel="home">
-            <img src="http://igniteportland.org/files/2013/09/Ignite-Portland-Logo2.png" alt="Ignite Portland" />
-          </a>
-        </h1>
-      <!-- .site-branding --></div>
-
-      <nav id="main-navigation" class="main-navigation" role="navigation">
-        <a href="#main-navigation" class="nav-open">Menu</a>
-        <a href="#" class="nav-close">Close</a>
-        <div class="clearfix sf-menu">
-          <ul id="menu-menu-1" class="menu">
-            <li id="menu-item-950" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-950"><a href="http://igniteportland.org/">Home</a></li>
-            <li id="menu-item-951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951"><a href="http://igniteportland.org/about/">About</a></li>
-            <li id="menu-item-962" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-962"><a href="http://igniteportland.org/watch/">Watch</a></li>
-            <li id="menu-item-953" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-953"><a href="http://igniteportland.org/events/">Past Events</a>
-              <ul class="sub-menu">
-                <li id="menu-item-955" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-955"><a href="http://igniteportland.org/events/ignite-portland-1/">Ignite Portland 1</a></li>
-                <li id="menu-item-977" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-977"><a href="http://igniteportland.org/events/ignite-portland-2/">Ignite Portland 2</a></li>
-                <li id="menu-item-957" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-957"><a href="http://igniteportland.org/events/ignite-portland-3/">Ignite Portland 3</a></li>
-                <li id="menu-item-979" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-979"><a href="http://igniteportland.org/events/ignite-portland-4/">Ignite Portland 4</a></li>
-                <li id="menu-item-958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-958"><a href="http://igniteportland.org/events/ignite-5/">Ignite Portland 5</a></li>
-                <li id="menu-item-959" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-959"><a href="http://igniteportland.org/events/ignite-portland-6/">Ignite Portland 6</a></li>
-                <li id="menu-item-960" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-960"><a href="http://igniteportland.org/events/ignite-portland-7/">Ignite Portland 7</a></li>
-                <li id="menu-item-954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-954"><a href="http://igniteportland.org/events/ignite-portland-8/">Ignite Portland 8</a></li>
-                <li id="menu-item-980" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="http://igniteportland.org/events/ignite-portland-9/">Ignite Portland 9</a></li>
-                <li id="menu-item-981" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-981"><a href="http://igniteportland.org/events/ignite-portland-10/">Ignite Portland 10</a></li>
-                <li id="menu-item-956" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-956"><a href="http://igniteportland.org/events/speakers/">Ignite Portland 11</a></li>
-              </ul>
-            </li>
-            <li id="menu-item-961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-961"><a href="http://igniteportland.org/volunteer/">Volunteer</a></li>
-            <li id="menu-item-963" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-963"><a href="http://igniteportland.org/sponsorships/">Sponsorships</a>
-              <ul class="sub-menu">
-                <li id="menu-item-964" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-964"><a href="http://igniteportland.org/sponsorships/past-sponsors/">Past Sponsors</a></li>
-              </ul>
-            </li>
-            <li id="menu-item-965" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-965 current-menu-item current_page_item"><a href="<%= root_path %>">Proposals</a></li>
-        </ul>
-      </div>
-    <!-- #main-navigation --></nav>
-  </div>
-<!-- #masthead --></header>
-
-  <div id="main" class="site-main">
-    <div class="clearfix container">
-      <div id="primary" class="content-area">
-        <div id="content" class="site-content" role="main">
-          <div id="breadcrumbs">
-            <% if @breadcrumbs %>
-              <% @breadcrumbs.each_with_index do |breadcrumb, i| %>
-                <% txt, path = breadcrumb %>
-                <% if i > 0 %>
-                  &#187;
-                <% end %>
-                <%= link_to(h(txt), path) %>
-              <% end %>
-            <% end %>
-          </div>
-
-          <header class="entry-header">
-            <h1 class="entry-title"><%= page_title %></h1>
-          </header>
-          <div class="clearfix entry-content">
-            <%# flash[:success] = "This test is for testing the notifications." %>
-            <%# flash[:failure] = "This test is for testing the notifications." %>
-            <%# flash[:notice] = "This test is for testing the notifications." %>
-            <%= notice %>
-            <%= yield %>
+<div id='outer-wrapper'>
+  <div id='wrap2'>
+    <!-- skip links for text browsers -->
+    <span id='skiplinks' style='display:none;'>
+      <a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar</a>
+    </span>
+    <div id='header-wrapper'>
+      <div class='header section' id='header'>
+        <div class='widget Header' id='Header1'>
+          <div class='titlewrapper' style='background: transparent'>
+            <a href='http://ignitecorvallis.com/' id='header-inner' style='display:block; background-image: url("http://3.bp.blogspot.com/__DzYR3a_gKY/SXbkqPmOGsI/AAAAAAAAC7Y/cV2K4nVBrY8/S1600-R/header_ignite2.jpg"); background-repeat: no-repeat; width: 950px; height: 217px;'>
+            </a>
           </div>
         </div>
       </div>
+      <div id='menu'>
+        <ul>
+        <li><a href='http://ignitecorvallis.com/2008/10/what-is-ignite.html'>About</a></li>
+        <li><a href='http://ignitecorvallis.com/search/label/video%20examples'>Watch</a></li>
+        <li><a href='http://proposals.ignitecorvallis.com/'>Proposals</a></li>
+        <li><a href='http://ignitecorvallis.com/search/label/agenda'>Agenda</a></li>
+        <li><a href='http://ignitecorvallis.com/2008/02/sponsorships.html'>Sponsors</a></li>
+        <li><a href='http://ignitecorvallis.com/2008/10/directions.html'>Directions</a></li>
+        <li><a href='#'>Tickets</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id='content-wrapper'>
+      <div id='main-wrapper'>
+        <div class="content">
+          <div id="primary-wrapper">
+            <div id="primary">
+              <a name="startcontent" id="startcontent"></a>
+              <div id="dynamic-content">
 
-      <div class="site-sidebar widget-area" role="complementary">
-        <aside id="login-as" class="widget">
-          <% if logged_in? %>
-            <h3 class="widget-title">Signed in as</h3>
-            <ul>
-              <li><b><%= current_user.label %></b></li>
-              <% if admin? %>
-                <li><%= link_to "Manage events", manage_events_path %></li>
-                <li><%= link_to "Manage snippets", manage_snippets_path %></li>
-                <li><%= link_to "Manage comments", comments_path %></li>
-                <% if @event %>
-                  <li><%= link_to "Export CSV", "/events/#{@event.id}/proposals.csv" %></li>
+                <div id="breadcrumbs">
+                  <% if @breadcrumbs %>
+                    <% @breadcrumbs.each_with_index do |breadcrumb, i| %>
+                      <% txt, path = breadcrumb %>
+                      <% if i > 0 %>
+                        &#187;
+                      <% end %>
+                      <%= link_to(h(txt), path) %>
+                    <% end %>
+                  <% end %>
+                </div>
+
+                <div id="rollingcontent" class="hfeed">
+                  <div class="hentry post publish alt">
+                    <div class="entry-head">
+                      <h3 class="post-title entry-title"><a><%= page_title %></a></h3>
+                    </div>
+                    <div class="entry-content">
+                      <%# flash[:success] = "This test is for testing the notifications." %>
+                      <%# flash[:failure] = "This test is for testing the notifications." %>
+                      <%# flash[:notice] = "This test is for testing the notifications." %>
+                      <%= notice %>
+                      <%= yield %>
+                    </div>
+                  </div>
+                </div><!-- #rollingcontent .hfeed -->
+              </div><!-- #dynamic-content -->
+            </div><!-- #primary -->
+          </div><!-- #primary-wrapper -->
+        </div>
+      </div>
+      <div id='sidebar-wrapper'>
+        <div class='sidebar section' id='sidebar'>
+          <div class='widget Feed' id='Feed2'>
+            <div id="login-as" class="hoverable widget module module1 sb-login alt">
+              <h2>Welcome</h2>
+              <ul>
+                <% if logged_in? %>
+                  <li><%= current_user.email || current_user.label %></li>
+                  <% if admin? %>
+                    <li><%= link_to "Manage events", manage_events_path %></li>
+                    <li><%= link_to "Manage snippets", manage_snippets_path %></li>
+                    <li><%= link_to "Manage comments", comments_path %></li>
+                    <% if @event %>
+                      <li><%= link_to "Export CSV", "/events/#{@event.id}/proposals.csv" %></li>
+                    <% end %>
+                  <% else %>
+                    <% if @event.accepting_proposals? %>
+                      <li>
+                        <%= link_to "Submit a proposal <span class='addable' />", new_event_proposal_path(@event) %>
+                      </li>
+                    <% end %>
+                  <% end %>
+                  <li><%= link_to "Sign out", sign_out_path %></li>
+                <% else %>
+                  <li><%= link_to "Sign in to manage your proposals", sign_in_path %></li>
+                  <% if @event.accepting_proposals? %>
+                    <li>
+                      <%= link_to "Submit a proposal <span class='addable' />", new_event_proposal_path(@event) %>
+                    </li>
+                  <% end %>
                 <% end %>
-              <% end %>
-              <li><%= link_to "Sign out", sign_out_path %></li>
-            </ul>
-          <% else %>
-            <h3 class="widget-title">Sign In</h3>
-            <ul>
-              <li><%= link_to "<b>Sign in</b> to manage your proposals".html_safe, sign_in_path %></li>
-            </ul>
-          <% end %>
-        </aside>
+              </ul>
+            </div>
 
-        <aside id="subscribe-to" class="widget">
-          <h3 class="widget-title">Subscribe to</h3>
-          <ul>
-            <li><%= link_to "<span class='feedable'>Proposals feed</span>".html_safe, proposals_path(:format => :atom) %></li>
-            <% if admin? %>
-              <li><%= link_to "<span class='feedable'>Comments feed</span>".html_safe, comments_path(:format => :atom, :secret => OpenConferenceWare::CommentsController::SECRET) %></li>
-            <% end %>
-          </ul>
-        </aside>
+            <div id="subscribe-to" class="hoverable widget module module1 sb-subscribe alt">
+              <h2>Subscribe to</h2>
+              <ul>
+              </ul>
+            </div>
 
-        <aside id="proposals-for" class="widget">
-          <h3 class="widget-title">Proposals for</h3>
-          <ul>
-            <% if @events.blank? %>
-              <li class="empty-text">&mdash; No events &mdash;</li>
-            <% else %>
-              <% for event in @events %>
-                <li><%= link_to event.title, event_proposals_path(event) %></li>
-              <% end %>
-            <% end %>
-          </ul>
-        </aside>
-      </div><!-- #sidebar-1 -->
-    </div><!-- .content -->
-  </div><!-- Close Page -->
-
-  <% if Rails.env.production? %>
-    <!--
-    Google Analytics Plugin for Wordpress and BBPress
-    http://boakes.org/analytics
-    -->
-    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-    </script>
-    <script type="text/javascript">
-    //<![CDATA[
-    _uacct = "UA-100805-10";
-    urchinTracker();
-    //]]>
-    </script>
-  <% end %>
+            <div id="proposals-for" class="hoverable widget module module1 sb-proposals alt">
+              <h2>Proposals for</h2>
+              <ul>
+                <% if @events.blank? %>
+                  <li class="empty-text">&mdash; No events &mdash;</li>
+                <% else %>
+                  <% for event in @events %>
+                    <li><%= link_to event.title, event_proposals_path(event) %></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-wrapper'>
+        <div class='footer section' id='footer'></div>
+        <a href='http://ignitecorvallis.com/'>Ignite Corvallis</a> &#169; 2009 | Design Customized by <a href='http://www.proworks.com'>ProWorks</a>
+      </div>
+    </div>
+  </div>
+  <!-- arbitrary javascript from views -->
+  <script type="text/javascript">
+    <%= yield :javascript %>
+  </script>
+</div><!-- end outer-wrapper -->
 </body>
 </html>
