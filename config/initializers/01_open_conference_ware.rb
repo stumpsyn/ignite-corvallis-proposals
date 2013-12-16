@@ -11,16 +11,16 @@ OpenConferenceWare.configure do |config|
   # Mailer host
   # The hostname to use when generating links in emails.
   # This shoud be the domain where OCW is hosted.
-  config.mailer_host = 'proposals.igniteportland.org'
+  config.mailer_host = 'proposals.ignitecorvallis.com'
 
   # Event name, or organization running events:
-  config.organization = 'Ignite Portland'
+  config.organization = 'Ignite Corvallis'
 
   # Abbreviated name for use in URLs and proposal slugs.
-  config.organization_slug = 'ip'
+  config.organization_slug = 'ic'
 
   # Top-level tagline or description.
-  config.tagline = 'Sharing burning ideas in Portland, OR'
+  config.tagline = 'Sharing burning ideas in Corvallis, OR'
 
   # What is the slug for the current event? E.g., if this is '2014' and the user
   # visits the '/proposals' URI, then the system will try to lookup an Event with
@@ -91,7 +91,7 @@ OpenConferenceWare.configure do |config|
   # instance, that provides a place for attendees to take notes.
 
   # URL where OCW is installed
-  config.app_root_url = 'http://proposals.igniteportland.org/'
+  config.app_root_url = 'http://proposals.ignitecorvallis.com/'
 
   # URL of wiki with session notes (optional). This 'printf' format contains
   # positional variables that filled by Proposal#session_notes_url:
@@ -109,6 +109,6 @@ OpenConferenceWare.configure do |config|
   # config.agreement =  'I have reviewed and agree to the recording policy and code of conduct.'
 
   # Breadcrumbs that are always visible, each breadcrumb is a name and URI:
-  config.breadcrumbs = [['Ignite Portland', 'http://igniteportland.org']]
+  config.breadcrumbs = [['Ignite Corvallis', 'http://ignitecorvallis.com/']]
 
 end
