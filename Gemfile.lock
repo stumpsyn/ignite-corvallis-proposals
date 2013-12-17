@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/osbridge/openconferenceware.git
-  revision: e87cee56e63dc32fb9dc1157a62ed6d596985195
+  revision: 905739fbeecc5644bc0d6618d23ec02c8a0182e7
   specs:
     open_conference_ware (1.0.0.pre2)
       RedCloth (~> 4.2.0)
@@ -28,7 +28,7 @@ GEM
   specs:
     Ascii85 (1.0.2)
     RedCloth (4.2.9)
-    aasm (3.0.24)
+    aasm (3.0.25)
     actionmailer (4.0.2)
       actionpack (= 4.0.2)
       mail (~> 2.5.4)
