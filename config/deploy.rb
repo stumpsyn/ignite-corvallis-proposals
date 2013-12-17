@@ -11,7 +11,7 @@ set :deploy_to, '/var/www/ignite-portland-proposals'
 # set :log_level, :debug
 # set :pty, true
 
-set :linked_files, %w{config/database.yml config/newrelic.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/newrelic.yml config/secrets.yml config/errbit.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 set :rails_env, :production  
