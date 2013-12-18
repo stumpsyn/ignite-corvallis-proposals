@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require openid-jquery
-//= require openid-en
+//= require turbolinks
 //= require_tree .
