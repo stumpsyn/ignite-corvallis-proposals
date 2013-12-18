@@ -2,6 +2,7 @@
  *= require persona-buttons
  *= require farbtastic
  *= require open_conference_ware/custom
+ *= require openid-selector/openid
  *= require_tree .
  */
 
