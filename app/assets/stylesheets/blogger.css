@@ -111,7 +111,7 @@ color:#3B3B3B;
 }
 #header .description {
 max-width:950px;
-font-family: Georgia;
+font: Georgia;
 color: #3B3B3B;
 margin: -10px 0 10px 345px;
 padding: 0px 0 0 0;
@@ -132,7 +132,7 @@ width: 950px;
 height: 60px;
 margin: 0 auto;
 padding-left:20px;
-background: #FFFFFF url(http://img140.imageshack.us/img140/9630/menuignitenv6.jpg);
+background: #FFFFFF url(http://4.bp.blogspot.com/-JqqBJm3Rkvw/VbWnn8uf7EI/AAAAAAAATv0/TVGF5s-JvrU/s960/menuignitenv6.jpg);
 background-repeat: no-repeat;
 }
 #menu ul {
@@ -169,7 +169,6 @@ margin:0 auto;
 padding:10px;
 text-align:left;
 font: normal normal 100% Georgia, Serif;
-font-family: Georgia, Serif;
 }
 #main-wrapper {
 width: 600px;
@@ -237,7 +236,6 @@ font-size:1.2em;
 }
 .post-footer {
 margin-top:20px;
-background:url(http://img509.imageshack.us/img509/995/postfooteroe6.png) top left no-repeat;
 width: 570px;
 height: 29px;
 padding: 7px 0 0 45px;
@@ -306,7 +304,7 @@ line-height: 2.5em;
 /* Sidebar Content
 ----------------------------------------------- */
 .sidebar h2{
-background:#FFFFFF url(http://img232.imageshack.us/img232/9379/subheaderigniteal2.jpg) top left no-repeat;
+background:#FFFFFF url(http://4.bp.blogspot.com/-dmD5zW0VY2g/VbWnnxt8BMI/AAAAAAAATv4/cI7zj4dtREo/s1600/sidebarignite.jpg) top left no-repeat;
 width: 262px;
 height: 41px;
 padding: 7px 0 0 10px;
@@ -317,6 +315,7 @@ margin-bottom:10px;}
 .sidebar {
 color: #666666;
 line-height: 1.5em;
+bottom left no-repeat;
 margin:0 0 5px 0;
 font-family: 'Trebuchet MS',Trebuchet,Arial,Verdana,Sans-serif
 }
